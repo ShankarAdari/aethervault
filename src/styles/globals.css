@@ -1,0 +1,373 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-playfair: 'Playfair Display', Georgia, serif;
+  --font-inter: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-grotesk: 'Space Grotesk', monospace, sans-serif;
+}
+
+/* ==========================================================
+   ATMOSPHERIC THEMES (Editorial Organic Meets Futuristic Glass)
+   ========================================================== */
+
+/* 1. DAWN (Warm Rose Gold, Golden Espresso, Organic Calm) */
+:root[data-theme="dawn"] {
+  --bg-primary: #0e0906;
+  --bg-secondary: rgba(255, 237, 226, 0.05);
+  --bg-card: rgba(255, 245, 238, 0.06);
+  --border-color: rgba(251, 146, 60, 0.18);
+  --text-primary: #fff7ed;
+  --text-muted: #fdba74;
+  --accent-color: #f97316;
+  --accent-glow: rgba(249, 115, 22, 0.42);
+  --particle-rgb: 251, 146, 60;
+
+  --glass-surface: rgba(24, 14, 10, 0.65);
+  --glass-card-bg: rgba(255, 255, 255, 0.045);
+  --glass-input-bg: rgba(18, 10, 6, 0.7);
+  --glass-pill-bg: rgba(255, 255, 255, 0.07);
+  --glass-border: rgba(254, 215, 170, 0.14);
+  --glass-border-hover: rgba(249, 115, 22, 0.5);
+  --glass-shadow: rgba(0, 0, 0, 0.55);
+
+  --glow-1: rgba(244, 63, 94, 0.24);
+  --glow-2: rgba(245, 158, 11, 0.2);
+  --glow-3: rgba(251, 146, 60, 0.16);
+}
+
+/* 2. MIDDAY (Clear Oceanic Azure, Ice Cyan, Crisp Clarity) */
+:root[data-theme="midday"] {
+  --bg-primary: #040913;
+  --bg-secondary: rgba(241, 245, 249, 0.05);
+  --bg-card: rgba(255, 255, 255, 0.06);
+  --border-color: rgba(96, 165, 250, 0.18);
+  --text-primary: #f0f9ff;
+  --text-muted: #93c5fd;
+  --accent-color: #06b6d4;
+  --accent-glow: rgba(6, 182, 212, 0.42);
+  --particle-rgb: 96, 165, 250;
+
+  --glass-surface: rgba(8, 18, 36, 0.65);
+  --glass-card-bg: rgba(255, 255, 255, 0.045);
+  --glass-input-bg: rgba(4, 12, 24, 0.7);
+  --glass-pill-bg: rgba(255, 255, 255, 0.07);
+  --glass-border: rgba(147, 197, 253, 0.14);
+  --glass-border-hover: rgba(6, 182, 212, 0.5);
+  --glass-shadow: rgba(0, 0, 0, 0.55);
+
+  --glow-1: rgba(6, 182, 212, 0.25);
+  --glow-2: rgba(59, 130, 246, 0.2);
+  --glow-3: rgba(16, 185, 129, 0.14);
+}
+
+/* 3. SUNSET (Royal Orchid, Velvet Plum, Dusk Elegance) */
+:root[data-theme="sunset"] {
+  --bg-primary: #0d0614;
+  --bg-secondary: rgba(45, 24, 56, 0.35);
+  --bg-card: rgba(255, 255, 255, 0.06);
+  --border-color: rgba(244, 114, 182, 0.18);
+  --text-primary: #fdf4ff;
+  --text-muted: #e879f9;
+  --accent-color: #d946ef;
+  --accent-glow: rgba(217, 70, 239, 0.42);
+  --particle-rgb: 244, 114, 182;
+
+  --glass-surface: rgba(24, 10, 34, 0.65);
+  --glass-card-bg: rgba(255, 255, 255, 0.045);
+  --glass-input-bg: rgba(16, 6, 24, 0.7);
+  --glass-pill-bg: rgba(255, 255, 255, 0.07);
+  --glass-border: rgba(240, 171, 252, 0.14);
+  --glass-border-hover: rgba(217, 70, 239, 0.5);
+  --glass-shadow: rgba(0, 0, 0, 0.55);
+
+  --glow-1: rgba(217, 70, 239, 0.25);
+  --glow-2: rgba(139, 92, 246, 0.22);
+  --glow-3: rgba(244, 63, 94, 0.16);
+}
+
+/* 4. NIGHT (Obsidian Void, Electric Violet, Cyber Indigo - DEFAULT) */
+:root[data-theme="night"] {
+  --bg-primary: #05070d;
+  --bg-secondary: rgba(15, 21, 37, 0.35);
+  --bg-card: rgba(255, 255, 255, 0.05);
+  --border-color: rgba(139, 92, 246, 0.18);
+  --text-primary: #f8fafc;
+  --text-muted: #94a3b8;
+  --accent-color: #8b5cf6;
+  --accent-glow: rgba(139, 92, 246, 0.45);
+  --particle-rgb: 139, 92, 246;
+
+  --glass-surface: rgba(10, 16, 28, 0.65);
+  --glass-card-bg: rgba(255, 255, 255, 0.045);
+  --glass-input-bg: rgba(8, 12, 22, 0.7);
+  --glass-pill-bg: rgba(255, 255, 255, 0.06);
+  --glass-border: rgba(255, 255, 255, 0.09);
+  --glass-border-hover: rgba(139, 92, 246, 0.45);
+  --glass-shadow: rgba(0, 0, 0, 0.6);
+
+  --glow-1: rgba(139, 92, 246, 0.26);
+  --glow-2: rgba(6, 182, 212, 0.2);
+  --glow-3: rgba(99, 102, 241, 0.16);
+}
+
+/* ==========================================================
+   BASE & TYPOGRAPHY
+   ========================================================== */
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-inter);
+  transition: background-color 0.8s ease, color 0.5s ease;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.font-display {
+  font-family: var(--font-playfair);
+  letter-spacing: -0.015em;
+}
+
+.font-sans {
+  font-family: var(--font-inter);
+}
+
+.font-mono {
+  font-family: var(--font-grotesk);
+}
+
+/* ==========================================================
+   LUXURY GLASSMORPHISM UTILITY CLASSES
+   ========================================================== */
+
+/* Primary Glass Panel (Header, Modals, Major Sections) */
+.glass-panel {
+  background: var(--glass-surface);
+  backdrop-filter: blur(28px) saturate(190%);
+  -webkit-backdrop-filter: blur(28px) saturate(190%);
+  border: 1px solid var(--glass-border);
+  box-shadow:
+    0 24px 60px -12px var(--glass-shadow),
+    inset 0 1px 1px 0 rgba(255, 255, 255, 0.15),
+    inset 0 -1px 1px 0 rgba(0, 0, 0, 0.25);
+}
+
+/* Interactive Card (Document cards, widgets, preview panes) */
+.glass-card {
+  background: var(--glass-card-bg);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid var(--glass-border);
+  box-shadow:
+    0 12px 36px -8px var(--glass-shadow),
+    inset 0 1px 1px 0 rgba(255, 255, 255, 0.12);
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-card:hover {
+  background: rgba(255, 255, 255, 0.065);
+  border-color: var(--glass-border-hover);
+  box-shadow:
+    0 20px 48px -10px var(--accent-glow),
+    inset 0 1px 2px 0 rgba(255, 255, 255, 0.22);
+  transform: translateY(-3px);
+}
+
+/* Subtle Glass Pill (Tags, status badges, chip buttons) */
+.glass-pill {
+  background: var(--glass-pill-bg);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid var(--glass-border);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  transition: all 0.25s ease;
+}
+
+.glass-pill:hover {
+  border-color: var(--glass-border-hover);
+  background: rgba(255, 255, 255, 0.09);
+}
+
+/* Input Fields (Search, auth inputs) */
+.glass-input {
+  background: var(--glass-input-bg);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--glass-border);
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.25);
+  color: var(--text-primary);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-input:focus {
+  border-color: var(--accent-color);
+  box-shadow:
+    0 0 0 3px var(--accent-glow),
+    inset 0 1px 2px rgba(0, 0, 0, 0.15);
+  background: rgba(255, 255, 255, 0.08);
+  outline: none;
+}
+
+.glass-input::placeholder {
+  color: var(--text-muted);
+  opacity: 0.55;
+}
+
+/* Luxury Glowing Button */
+.glass-button-primary {
+  background: linear-gradient(135deg, var(--accent-color) 0%, #6d28d9 100%);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  box-shadow:
+    0 8px 24px -4px var(--accent-glow),
+    inset 0 1px 1px 0 rgba(255, 255, 255, 0.4);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  color: #ffffff;
+}
+
+.glass-button-primary:hover {
+  box-shadow:
+    0 14px 36px -2px var(--accent-glow),
+    inset 0 1px 2px 0 rgba(255, 255, 255, 0.6);
+  transform: translateY(-1.5px) scale(1.01);
+}
+
+.glass-button-primary:active {
+  transform: translateY(0.5px) scale(0.99);
+}
+
+/* Secondary Frosted Button */
+.glass-button-secondary {
+  background: var(--glass-pill-bg);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--glass-border);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  color: var(--text-primary);
+  transition: all 0.25s ease;
+}
+
+.glass-button-secondary:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: var(--glass-border-hover);
+  color: #ffffff;
+}
+
+/* ==========================================================
+   AMBIENT GLOW ORBS & MESH BACKGROUND
+   ========================================================== */
+.ambient-orbs {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.orb-1 {
+  position: absolute;
+  top: -10rem;
+  left: -10rem;
+  width: 44rem;
+  height: 44rem;
+  border-radius: 9999px;
+  filter: blur(140px);
+  background: var(--glow-1);
+  animation: pulseGlow 6s infinite alternate ease-in-out;
+}
+
+.orb-2 {
+  position: absolute;
+  top: 30%;
+  right: -10rem;
+  width: 48rem;
+  height: 48rem;
+  border-radius: 9999px;
+  filter: blur(160px);
+  background: var(--glow-2);
+  animation: pulseGlow 7s infinite alternate ease-in-out;
+  animation-delay: 2s;
+}
+
+.orb-3 {
+  position: absolute;
+  bottom: -10rem;
+  left: 30%;
+  width: 40rem;
+  height: 40rem;
+  border-radius: 9999px;
+  filter: blur(150px);
+  background: var(--glow-3);
+  animation: pulseGlow 8s infinite alternate ease-in-out;
+  animation-delay: 4s;
+}
+
+@keyframes pulseGlow {
+  0%   { opacity: 0.35; transform: scale(0.98) translate(0, 0); }
+  50%  { opacity: 0.65; transform: scale(1.05) translate(15px, -10px); }
+  100% { opacity: 0.85; transform: scale(1.1) translate(-10px, 15px); }
+}
+
+/* Subtle dot-grid pattern overlay */
+.dot-grid {
+  position: absolute;
+  inset: 0;
+  opacity: 0.03;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.6) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+/* Specular gold / iridescent text gradients */
+.gradient-text-editorial {
+  background: linear-gradient(135deg, #ffffff 0%, #cbd5e1 50%, var(--accent-color) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gradient-text-accent {
+  background: linear-gradient(135deg, var(--accent-color) 0%, #38bdf8 50%, #f43f5e 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Shimmer animation */
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.shimmer-active {
+  background: linear-gradient(90deg, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.12) 50%, rgba(255,255,255,0.03) 100%);
+  background-size: 200% 100%;
+  animation: shimmer 3s infinite linear;
+}
+
+/* Glow Text */
+.glow-text-accent {
+  text-shadow: 0 0 16px var(--accent-glow);
+}
+
+/* ==========================================================
+   CUSTOM SLEEK SCROLLBAR
+   ========================================================== */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 9999px;
+  backdrop-filter: blur(4px);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-color);
+}
